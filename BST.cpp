@@ -9,7 +9,7 @@ void BST::insert(NumNode* newNode)
         return; //exit function early, we are done here
     }
 
-    //some pointers to help us navigate the tree to find where to put the new student
+    //some pointers to help us navigate the tree to find where to put the new node
     NumNode* current = root; //current node we're pointing at
     NumNode* parent = NULL; //parent of current (node visitored last time)
 
@@ -18,15 +18,15 @@ void BST::insert(NumNode* newNode)
         //lets keep track of where we were before moving down further
         parent = current;
         //LEFT OR RIGHT?!
-        //if new students studentID is less then the student at current node, then go down LEFT
+        //if new nodes value is less then the student at current node, then go down LEFT
         if (newNode->intNum < current->intNum)
         {
             //< means we go down deeper into tree on left side
             current = current->leftChild;
-            //if current is NULL, we just found an empty space to insert our new Student :D
+            //if current is NULL, we just found an empty space to insert our new node! :D
             if (current == NULL)
             {
-                //done, stick student here
+                //done, stick node here
                 parent->leftChild = newNode;
                 return; //done, bail
             }
