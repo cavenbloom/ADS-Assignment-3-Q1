@@ -112,14 +112,14 @@ NumNode* AVL::insertAVL(NumNode* parent, NumNode* newNum)
         return parent;
     }
 
-    //parent not null, so we haven't found an empty space to stick new student yet
+    //parent not null, so we haven't found an empty space to stick new node yet
     //so we need to go down either left or right path
     if (newNum->intNum < parent->intNum)
     {
         parent->leftChild = insertAVL(parent->leftChild, newNum);
         parent = balance(parent);
     }
-    else //assume id >= parent's id
+    else //assume node value >= parent's node value
     {
         parent->rightChild = insertAVL(parent->rightChild, newNum);
         parent = balance(parent);
